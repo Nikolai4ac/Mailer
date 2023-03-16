@@ -9,7 +9,7 @@ router2.get('/receiver-list', function(req, res, next) {
             throw err;
         }
         console.log(data);
-        res.render('index', {title: 'User List', userData: data})
+        res.render('index', {userData: data})
     })
 })
 module.exports = router2;

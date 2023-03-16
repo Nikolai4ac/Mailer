@@ -9,8 +9,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}))
 app.use('/', Index);
-app.use('/', router1)
-app.use('/', router2)
+app.use('/', router1);
+app.use('/', router2);
+app.get('/', (req,res) => {
+    res.redirect('/receiver-list');
+})
 app.use(express.static('public'))
 app.listen(port, (error) => { 
     if (error) { 
