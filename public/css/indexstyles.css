@@ -1,0 +1,63 @@
+#content-holder {
+    width: 100%;
+    background-color: cadetblue;
+    padding: 95px 0px 95px 0px;
+}
+#sender {
+    margin: auto;
+    display: grid;
+    max-width: 10%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+input {
+    padding: 10px;
+}
+#add-email {
+    max-width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: mont, sans-serif;
+    background-color: rgba(117, 255, 147, 0.459);
+    color: white;
+    font-size: 24px;
+    border: none;
+}
+#add-email:hover {
+    background-color: rgba(117, 255, 147, 0.259);
+    cursor: pointer;
+}
+#grid-layout {
+    background-color: rgb(99, 129, 150);
+    max-width: 100%;
+    height: 60vh;
+}
+html {
+    background-color: rgb(99, 129, 150);
+}
+table, td, th {
+    border: 0.2px solid black;
+    background-color: rgba(20, 76, 94, 0.507);
+    padding: 10px;
+    color: white;
+}
+#grid-layout-ejs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#send-mail-btn {
+    width: 100%;
+    height: 50px;
+    font-family: mont, sans-serif;
+    background-color: rgba(117, 255, 147, 0.459);
+    color: white;
+    font-size: 24px;
+    border: none;
+}
+#send-mail-btn:hover {
+    background-color: rgba(117, 255, 147, 0.259);
+    cursor: pointer;
+}
