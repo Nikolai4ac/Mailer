@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MailerTest</title>
-    <link rel="stylesheet" href="css/indexstyles.css">
-  </head>
-  <body>
-      <div id="content-holder">
-        <form action="/create-list" id="sender" method="POST">
-          <input type="email" name="email"  placeholder="example@domain" id="email" required></input><br>
-          <input type="text" name="fname"  placeholder="First name" id="fname" required> </input><br>
-          <input type="text" name="lname" placeholder="Last name" id="lname" required> </input><br>
-          <button type="submit" id="add-email">ADD RECEIVER</button>
-        </form>
-      </div>
-      <div id="grid-layout">
 
-      </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MailerTest</title>
+  <link rel="stylesheet" href="css/indexstyles.css">
+</head>
+
+<body>
+  <div id="content-holder">
+    <form action="/create-list" id="sender" method="POST">
+      <input type="email" name="email" placeholder="example@domain" id="email" required></input><br>
+      <input type="text" name="fname" placeholder="First name" id="fname" required> </input><br>
+      <input type="text" name="lname" placeholder="Last name" id="lname" required> </input><br>
+      <button type="submit" id="add-email">ADD RECEIVER</button>
+    </form>
+  </div>
+  <div id="grid-layout">
+
+  </div>
+
+</body>
+
 </html>
