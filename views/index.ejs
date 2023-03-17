@@ -35,14 +35,14 @@
                 <th>Email</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tblrow">
                 <% if (userData.length != 0) { %>
                   <% userData.forEach(function(data) { %>
                     <tr>
-                      <td><input type="checkbox" name="checkboxthing" id="check"></input></td>
-                      <td id="fnameData"><%= data.first_name %></td>
-                      <td id="lnameData"><%= data.last_name %></td>
-                      <td id="emailData"><%= data.email %></td>
+                      <td><input type="checkbox" name="checkboxthing" id="check" class="checkboxes"></input></td>
+                      <td name="fnameData"><%= data.first_name %></td>
+                      <td name="lnameData"><%= data.last_name %></td>
+                      <td name="emailData"><%= data.email %></td>
                     </tr>
                   <% }); %>
                 <% } else { %>
@@ -52,7 +52,7 @@
                 <% } %>
               </tbody>
           </table>
-          <button type="submit" id="send-mail-btn">SEND EMAIL</button>
+          <button id="send-mail-btn">SEND EMAIL</button>
         </form>
       </div>
   </body>
