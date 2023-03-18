@@ -16,7 +16,8 @@ app.use('/', router3)
 app.get('/', (req,res) => {
     res.redirect('/receiver-list');
 })
-app.use(express.static('public'))
+app.use("/public/", express.static('./public/'))
+app.use(express.json());
 app.listen(port, (error) => { 
     if (error) { 
         throw error;
