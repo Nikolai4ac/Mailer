@@ -28,7 +28,6 @@
           <input type="text" name="lname" placeholder="Last name" id="lname" required> </input><br>
           <button type="submit" id="add-email">ADD RECEIVER</button>
         </form>
-        <button id="deleteButton" onclick="deleteUser(event)">DELETE</button>
       </div>
       <div id="grid-layout-ejs">
         <form action="/request-email-sending" method="POST" onsubmit="stay()">
@@ -73,6 +72,8 @@
           <script type="application/javascript" src="../public/js/deletedata.js"></script>
           <script type="application/javascript" src="../public/js/checkAll.js"></script>
           <button id="send-mail-btn" onclick="execute(), logInfo()">SEND EMAIL</button>
+          <button id="deleteButton" onclick="deleteUser(event)">DELETE DATA</button>
+
         </form>
       </div>
 

@@ -124,12 +124,9 @@ table, td, th {
     background-color: rgba(117, 255, 147, 0.259);
 }
 #deleteButton {
-    display: block;
-    margin: auto;
-    padding: 20px;
-    margin-top: 20px;
-    width:190px;
     background-color: rgba(255, 117, 117, 0.459);
+    width: 100%;
+    padding: 10px;
     color: white;
     font-size: 24px;
     border: none;
