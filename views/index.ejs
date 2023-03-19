@@ -17,7 +17,7 @@
               <input type="text" name="subject" id="subject"></input><br><br><br>
               <label>Your message: </label><br>
               <textarea rows="8" cols="50" name="message" form="modalForm" id="msgbox"></textarea>
-              <button id="submitButton" type="submit">SUBMIT</button>
+              <button id="submitButton" type="submit">SEND</button>
           </form>
       </div>
     </div>
@@ -28,6 +28,7 @@
           <input type="text" name="lname" placeholder="Last name" id="lname" required> </input><br>
           <button type="submit" id="add-email">ADD RECEIVER</button>
         </form>
+        <button id="deleteButton" onclick="deleteUser(event)">DELETE</button>
       </div>
       <div id="grid-layout-ejs">
         <form action="/request-email-sending" method="POST" onsubmit="stay()">
@@ -69,6 +70,7 @@
               </tbody>
           </table>
           <script type="application/javascript" src="../public/js/modalform.js"></script>
+          <script type="application/javascript" src="../public/js/deletedata.js"></script>
           <script type="application/javascript" src="../public/js/checkAll.js"></script>
           <button id="send-mail-btn" onclick="execute(), logInfo()">SEND EMAIL</button>
         </form>

@@ -16,8 +16,8 @@ con.connect(function (err) {
 });
 function insertInTable(data) {
   const sql =
-  `INSERT INTO customers (first_name, last_name, email) VALUES ('${data[0]}', '${data[1]}', '${data[2]}');`;
-  con.query(sql, [data], function (err, result, fields) {
+  `INSERT INTO customers (first_name, last_name, email) VALUES (?, ?, ?);`;
+  con.query(sql, [data[0], data[1], data[2]], function (err, result, fields) {
     if (err) {
       throw err;
     } else {
@@ -26,5 +26,15 @@ function insertInTable(data) {
     }
   });
 }
+function deleteFromTable(data) {
+  const sql = "DELETE FROM customers WHERE first_name = ? AND last_name = ? AND email = ?";
+  con.query(sql, [data[0], data[1], data[2]], function(err, result, fields) {
+    if (err) {
+      throw err
+    } else {
+      console.log(`1 RECORD DELETED!`);
+    }
+  })
+}
 
-module.exports = { router1, insertInTable };
+module.exports = { router1, insertInTable, deleteFromTable};
