@@ -11,32 +11,31 @@ router4.post('/send-email-data', (req, res) => {
     emailSubject = data.subject;
     emailText = data.message;
     emailReceivers = getReceiversString();
-    console.log(emailReceivers);
-    // function test () {
-    //     let transportUnit = nodemailer.createTransport({
-    //         service: 'outlook',
-    //         auth: {
-    //             user:,
-    //             pass: 
-    //         }
-    //     });
+    function test () {
+        let transportUnit = nodemailer.createTransport({
+            service: 'outlook',
+            auth: {
+                user: "user@domain.com",
+                pass: "password"
+            }
+        });
     
-    //     let infoMail = {
-    //         from: '"Gosho hubaveca" <Nikolai4ac@students.softuni.bg>',
-    //         to: emailReceivers,
-    //         subject: emailSubject,
-    //         text: emailText
-    //     }
+        let infoMail = {
+            from: '"Gosho hubaveca" <user@domain.com>',
+            to: emailReceivers,
+            subject: emailSubject,
+            text: emailText
+        }
     
-    //     transportUnit.sendMail(infoMail, function (error, info) {
-    //         if (error) {
-    //             console.log(error);
-    //         } else {
-    //             console.log(`Email sent: ${info.response}`);
-    //         }
-    //     })
-    // }
-    // test()
+        transportUnit.sendMail(infoMail, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(`Email sent: ${info.response}`);
+            }
+        })
+    }
+    test()
     res.end();
 })
 module.exports = router4;

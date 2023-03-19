@@ -8,7 +8,6 @@ router2.get('/receiver-list', function(req, res, next) {
         if (err) { 
             throw err;
         }
-        console.log(data);
         res.render('index', {userData: data})
     })
 })
