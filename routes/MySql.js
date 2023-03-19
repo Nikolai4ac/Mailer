@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 const router1 = express.Router();
+const colors = require('colors');
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -21,7 +22,7 @@ async function insertInTable(data) {
     if (err) {
       throw err;
     } else {
-      console.log(`1 record inserted`);
+      console.log(`RECORD INSERTED`.green);
     }
   });
 }
@@ -31,7 +32,7 @@ async function deleteFromTable(data) {
     if (err) {
       throw err
     } else {
-      console.log(`1 RECORD DELETED!`);
+      console.log(`RECORD DELETED!`.red);
     }
   })
 }
