@@ -21,7 +21,6 @@ function insertInTable(data) {
     if (err) {
       throw err;
     } else {
-      console.log(`First name:  ${data[0]}\nLast Name:  ${data[1]}\nEmail:  ${data[2]}\n`);
       console.log(`1 record inserted`);
     }
   });
