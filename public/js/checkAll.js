@@ -1,4 +1,4 @@
-function logInfo() {
+async function logInfo() {
     const tbody = document.getElementById('tblrow')
     const selectedRows = [...tbody.children].filter(tr => tr.children[0].firstChild.checked)
     const testData = [];
@@ -11,7 +11,7 @@ function logInfo() {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '/send-email');
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.onload = function() {
+    xhr.onload = async function() {
       if (xhr.status === 200) {
         console.log(xhr.status);
       }

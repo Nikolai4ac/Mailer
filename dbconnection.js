@@ -7,7 +7,7 @@ const con = mysql.createConnection({
     database: 'maildb'
 })
 
-con.connect(function(err) {
+con.connect(async function(err) {
     if (err) {
         throw err
     } else {

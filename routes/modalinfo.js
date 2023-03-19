@@ -11,7 +11,7 @@ router4.post('/send-email-data', (req, res) => {
     emailSubject = data.subject;
     emailText = data.message;
     emailReceivers = getReceiversString();
-    function test () {
+    async function test () {
         let transportUnit = nodemailer.createTransport({
             service: 'outlook',
             auth: {
@@ -19,14 +19,12 @@ router4.post('/send-email-data', (req, res) => {
                 pass: "password"
             }
         });
-    
         let infoMail = {
             from: '"Gosho hubaveca" <user@domain.com>',
             to: emailReceivers,
             subject: emailSubject,
             text: emailText
         }
-    
         transportUnit.sendMail(infoMail, function (error, info) {
             if (error) {
                 console.log(error);

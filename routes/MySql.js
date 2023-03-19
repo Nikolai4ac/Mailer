@@ -14,7 +14,7 @@ con.connect(function (err) {
     console.log("Connected to Database!");
   }
 });
-function insertInTable(data) {
+async function insertInTable(data) {
   const sql =
   `INSERT INTO customers (first_name, last_name, email) VALUES (?, ?, ?);`;
   con.query(sql, [data[0], data[1], data[2]], function (err, result, fields) {
@@ -25,7 +25,7 @@ function insertInTable(data) {
     }
   });
 }
-function deleteFromTable(data) {
+async function deleteFromTable(data) {
   const sql = "DELETE FROM customers WHERE first_name = ? AND last_name = ? AND email = ?";
   con.query(sql, [data[0], data[1], data[2]], function(err, result, fields) {
     if (err) {

@@ -1,9 +1,9 @@
-function execute() {
+async function execute() {
     let modal = document.getElementById("myModal");
     let btnOk = document.getElementById('submitButton');
     let span = document.getElementsByClassName("close")[0];
     modal.style.display = 'block';
-    btnOk.onclick = function (event) {
+    btnOk.onclick = async function (event) {
         event.preventDefault();
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '/send-email-data');
