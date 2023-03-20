@@ -11,6 +11,7 @@ async function execute() {
         xhr.onload = function() {
           if (xhr.status === 200) {
             console.log('OK');
+            window.location.href = '/receiver-list'
           }
           else {
             window.alert('Error: ' + xhr.statusText);
