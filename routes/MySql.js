@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
-const router1 = express.Router();
+const mySqlRouter = express.Router();
 const colors = require('colors');
 const con = mysql.createConnection({
   host: "localhost",
@@ -16,9 +16,9 @@ con.connect(function (err) {
   }
 });
 async function insertInTable(data) {
-  const sql =
-  `INSERT INTO customers (first_name, last_name, email) VALUES (?, ?, ?);`;
-  con.query(sql, [data[0], data[1], data[2]], function (err, result, fields) {
+  // const sql = `INSERT INTO customers (first_name, last_name, email) VALUES (?, ?, ?);`;
+  const procedureSql = 'CALL insertData(?, ?, ?)'
+  con.query(procedureSql, [data[0], data[1], data[2]], function (err, result, fields) {
     if (err) {
       throw err;
     } else {
@@ -27,8 +27,9 @@ async function insertInTable(data) {
   });
 }
 async function deleteFromTable(data) {
-  const sql = "DELETE FROM customers WHERE first_name = ? AND last_name = ? AND email = ?";
-  con.query(sql, [data[0], data[1], data[2]], function(err, result, fields) {
+  // const sql = "DELETE FROM customers WHERE first_name = ? AND last_name = ? AND email = ?";
+  const procedureSql = 'CALL deleteData(?,?,?)';
+  con.query(procedureSql, [data[0], data[1], data[2]], function(err, result, fields) {
     if (err) {
       throw err
     } else {
@@ -37,4 +38,4 @@ async function deleteFromTable(data) {
   })
 }
 
-module.exports = { router1, insertInTable, deleteFromTable};
+module.exports = { mySqlRouter, insertInTable, deleteFromTable};

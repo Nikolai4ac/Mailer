@@ -1,21 +1,21 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
-const Index = require('.//routes/Index');
+const insertRouter = require('.//routes/Index');
 const path = require('path');
-const { router1 } = require('./routes/MySql');
-const router2 = require('./routes/receivers');
-const {router3} = require('./routes/prepare');
-const router4 = require('./routes/modalinfo');
+const { mySqlRouter } = require('./routes/MySql');
+const showTableRouter = require('./routes/receivers');
+const {preparationRouter} = require('./routes/prepare');
+const mailSendRouter = require('./routes/modalinfo');
 const bodyParser = require('body-parser');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}))
-app.use('/', Index);
-app.use('/', router1);
-app.use('/', router2);
-app.use('/', router3);
-app.use('/', router4);
+app.use('/', insertRouter);
+app.use('/', mySqlRouter);
+app.use('/', showTableRouter);
+app.use('/', preparationRouter);
+app.use('/', mailSendRouter);
 app.use(bodyParser.json());
 app.get('/', (req,res) => {
     res.redirect('/receiver-list');
