@@ -27,6 +27,6 @@ To run tests, run the following command
 ## Acknowledgements
 
  - [Node.js tutorials](https://www.w3schools.com/nodejs/)
- - [Express tutorials](https://github.com/matiassingers/awesome-readme)
+ - [Express tutorials](https://www.tutorialspoint.com/expressjs/index.html)
  - [MySQL tutorials](https://www.w3schools.com/MySQL/default.asp)
 
