@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const mailSendRouter = express.Router();
 const { getReceiversString } = require('../routes/prepare');
-mailSendRouter.use(bodyParser.json())
-mailSendRouter.use(bodyParser.urlencoded({extended: false}))
+mailSendRouter.use(bodyParser.json({limit: '20mb'}))
+mailSendRouter.use(bodyParser.urlencoded({limit: '20mb',extended: false}))
 let emailSubject, emailText, emailReceivers;
 mailSendRouter.post('/send-email-data', (req, res) => {
     const data = req.body;
@@ -13,14 +13,14 @@ mailSendRouter.post('/send-email-data', (req, res) => {
     emailReceivers = getReceiversString();
     async function test () {
         let transportUnit = nodemailer.createTransport({
-            service: 'outlook',
+            service: '',
             auth: {
                 user: "",
                 pass: ""
             }
         });
         let infoMail = {
-            from: '"Gosho Hubavecut" <Nikolai4ac@students.softuni.bg>',
+            from: '"" <>',
             to: emailReceivers,
             subject: emailSubject,
             text: emailText

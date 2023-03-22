@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const preparationRouter = express.Router();
 const { deleteFromTable } = require('../routes/MySql');
-preparationRouter.use(bodyParser.json());
+preparationRouter.use(bodyParser.json({limit: '20mb'}));
 let receiversString;
 preparationRouter.post('/send-email', (req, res) => {
     const data = req.body;

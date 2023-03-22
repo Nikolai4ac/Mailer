@@ -10,13 +10,13 @@ const mailSendRouter = require('./routes/modalinfo');
 const bodyParser = require('body-parser');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({limit: '20mb', extended: true}))
 app.use('/', insertRouter);
 app.use('/', mySqlRouter);
 app.use('/', showTableRouter);
 app.use('/', preparationRouter);
 app.use('/', mailSendRouter);
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '20mb'}));
 app.get('/', (req,res) => {
     res.redirect('/receiver-list');
 })
