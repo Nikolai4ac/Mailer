@@ -28,5 +28,5 @@ To run tests, run the following command
 
  - [Node.js tutorials](https://www.w3schools.com/nodejs/)
  - [Express tutorials](https://github.com/matiassingers/awesome-readme)
- - [MySQL tutorials](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+ - [MySQL tutorials](https://www.w3schools.com/MySQL/default.asp)
 
