@@ -7,7 +7,7 @@ async function execute() {
         event.preventDefault();
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '/send-email-data');
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
+        // xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
         xhr.onload = function() {
           if (xhr.status === 200) {
             console.log('OK');
@@ -19,8 +19,8 @@ async function execute() {
         };
         let modalData = new FormData(document.getElementById('modalForm'));
         let sendModal = Object.fromEntries(modalData);
-        console.log(JSON.stringify(sendModal));
-        xhr.send(JSON.stringify(sendModal));
+        // console.log(JSON.stringify(sendModal));
+        xhr.send(modalData);
     };
     span.onclick = function () {
       modal.style.display = "none";
